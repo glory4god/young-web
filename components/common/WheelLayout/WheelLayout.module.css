@@ -1,0 +1,10 @@
+.root {
+  @apply w-screen h-screen overflow-auto;
+  transition : all 0.6s ease;
+}
+
+.root > div{
+  @apply w-screen h-screen overflow-hidden;
+  transition : all 0.6s ease;
+
+}
