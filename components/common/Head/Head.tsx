@@ -10,6 +10,7 @@ const Head: FC = () => {
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
+        <title>YU HAYOUNG</title>
       </NextHead>
     </>
   );

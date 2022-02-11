@@ -1,0 +1,35 @@
+.root {
+  @apply h-20 px-40 fixed text-white flex items-center justify-between;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  width: 100%;
+}
+.menu {
+  @apply flex ;
+}
+
+.menu > span {
+  @apply px-12;
+}
+.language {
+  @apply flex ;
+}
+.language > span {
+  @apply px-2;
+}
+.language > span:last-child {
+  @apply hidden;
+}
+
+@media screen and (max-width : 968px) {
+  .root {
+    @apply px-8
+  }
+  .menu {
+    display: none;
+  }
+  .language > span:last-child {
+    @apply block;
+  }
+}
