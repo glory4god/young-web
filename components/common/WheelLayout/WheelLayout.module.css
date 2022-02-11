@@ -1,10 +1,8 @@
 .root {
-  @apply w-screen h-screen overflow-auto;
-  transition : all 0.6s ease;
+  @apply w-screen h-screen overflow-hidden pt-20 bg-black text-white;
 }
 
-.root > div{
+.root > div:not(:last-child){
   @apply w-screen h-screen overflow-hidden;
   transition : all 0.6s ease;
-
 }

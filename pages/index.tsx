@@ -1,24 +1,19 @@
 import { NextPage } from 'next';
-import Head from 'next/head';
 import React from 'react';
 
-import { WheelLayout } from '@components/common';
+import { Navbar, Footer, WheelLayout } from '@components/common';
+
+import cn from 'classnames';
 
 const Home: NextPage = () => {
-  const content = ['red', 'blue', 'black', 'white'];
   return (
     <>
-      <Head>
-        <title>HOME 페이지</title>
-      </Head>
-      <WheelLayout content={content}>
-        {content.map((arr, idx) => {
-          return (
-            <div key={idx} style={{ backgroundColor: `${arr}` }}>
-              HAYOUNG profile{arr}
-            </div>
-          );
-        })}
+      <WheelLayout>
+        <div className={cn('')}>HAYOUNG profile1</div>
+        <div className={cn('')}>HAYOUNG profile2</div>
+        <div className={cn('')}>HAYOUNG profile3</div>
+        <div className={cn('')}>HAYOUNG profile4</div>
+        <Footer />
       </WheelLayout>
     </>
   );
