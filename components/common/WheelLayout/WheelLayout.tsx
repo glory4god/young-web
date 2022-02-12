@@ -1,12 +1,16 @@
+import { setBgColor } from '@lib/redux/slices/globalSlice';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import s from './WheelLayout.module.css';
 
 interface LayoutProps {
   children?: any;
+  colors: string[];
 }
 
 const WheelLayout = (props: LayoutProps) => {
-  const { children } = props;
+  const { children, colors } = props;
+  const dispatch = useDispatch();
   const wheelRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
@@ -19,8 +23,7 @@ const WheelLayout = (props: LayoutProps) => {
       const innerHeight = window.innerHeight;
       const cnt = children.length;
       const scrollTop = current.scrollTop;
-      const currentPage = Math.floor(scrollTop / innerHeight) + 1;
-
+      let currentPage = Math.floor(scrollTop / innerHeight) + 1;
       if (deltaY > 0) {
         // 내리기
         if (currentPage < cnt) {
@@ -29,25 +32,33 @@ const WheelLayout = (props: LayoutProps) => {
             top: innerHeight * currentPage,
             behavior: 'smooth',
           });
+          currentPage += 1;
         }
       } else {
         // 올리기
         if (currentPage > 0) {
-          if (innerHeight * (cnt - 2) >= scrollTop) {
-            current.scrollTo({
-              left: 0,
-              top: innerHeight * (currentPage - 2),
-              behavior: 'smooth',
-            });
-          } else {
-            current.scrollTo({
-              left: 0,
-              top: innerHeight * (currentPage - 1),
-              behavior: 'smooth',
-            });
+          if (scrollTop > 0) {
+            if (innerHeight * (cnt - 2) >= scrollTop) {
+              current.scrollTo({
+                left: 0,
+                top: innerHeight * (currentPage - 2),
+                behavior: 'smooth',
+              });
+              currentPage -= 1;
+              console.log('두칸');
+            } else {
+              current.scrollTo({
+                left: 0,
+                top: innerHeight * (currentPage - 1),
+                behavior: 'smooth',
+              });
+              console.log('한칸');
+            }
           }
         }
       }
+      console.log(currentPage - 1, ':', colors[currentPage - 1]);
+      dispatch(setBgColor(colors[currentPage - 1]));
     };
 
     current.addEventListener('wheel', wheel);
