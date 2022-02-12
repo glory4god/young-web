@@ -26,33 +26,31 @@ const Navbar = () => {
   return (
     <div className={cn(s.root)} style={{ color: `${textColor}` }}>
       {console.log(backgroundColor)}
-      <div>HAYOUNG YU</div>
+      <div>
+        <Link href={'/'}>
+          <a>HAYOUNG YU</a>
+        </Link>
+      </div>
       <div className={s.menu}>
         <Link
-          href={'/'}
+          href={'/about'}
           // onClick={() => moveScrollBy(0)}
         >
-          <a className={s.customButton}>1</a>
+          <a className={s.customButton}>About</a>
         </Link>
         <Link
-          href={'/'}
+          href={'/career'}
           //  onClick={() => moveScrollBy(innerHeight)}
         >
-          <a className={s.customButton}>2</a>
+          <a className={s.customButton}>Career</a>
         </Link>
-        <Link href={'/'}>
+        <Link href={'/tech'}>
           <a
             className={s.customButton}
             // onClick={() => moveScrollBy(innerHeight * 2)}
           >
-            3
+            Tech
           </a>
-        </Link>
-        <Link
-          href={'/'}
-          // onClick={() => moveScrollBy(innerHeight * 3)}
-        >
-          <a className={s.customButton}>4</a>
         </Link>
       </div>
       <div className={s.language}>

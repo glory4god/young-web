@@ -3,7 +3,7 @@
 }
 
 .root > div:not(:last-child){
-  @apply w-screen h-screen overflow-hidden flex items-center justify-center;
+  @apply w-screen h-screen overflow-hidden m-auto flex items-center justify-center;
   transition : all 0.6s ease; 
   background-position: center;
   background-repeat: no-repeat;
