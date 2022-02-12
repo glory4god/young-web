@@ -1,14 +1,11 @@
 .root {
-  @apply flex flex-col w-1/2 h-2/3 mt-12 py-6 px-12;
+  @apply flex flex-col mt-12;
   background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,0.1)
-}
-.title {
-  @apply text-center text-2xl mb-6;
 }
 .root > div {
   @apply flex flex-col h-5/6 text-base justify-around;
@@ -16,13 +13,14 @@
 .root > div > span {
   @apply flex ;
 }
-.root > div > div {
+.large > div > div {
   @apply grid grid-cols-2 items-center;
 }
 .root > div > span:hover {
   @apply text-blue-300;
 }
 .root > div > div > span {
+  @apply items-center;
   line-height: 180%;
 }
 .root > div > div > span > span {
@@ -31,19 +29,66 @@
 .root > div > div > span:hover {
   @apply text-blue-300;
 }
+.large {
+  @apply py-8 px-12;
+  width: 1000px;
+  height: 620px;
+}
+.medium {
+  @apply py-6 px-8;
+  width: 500px;
+  height: 320px;
+}
+.small {
+  @apply p-4;
+  width: 200px;
+  height: 200px;
+}
+.small:hover {
+  transform:scale(1.2);
+  transition: all 0.4s ease;
+  opacity: 0;
+  z-index:999;
+}
+.title {
+  @apply text-center;
+}
+.large .title {
+  @apply text-xl mb-6;
+}
+.medium .title {
+  @apply text-lg mb-4;
+}
+.small .title {
+  @apply text-lg mb-2;
+}
+.small > div {
+  @apply text-center text-base;
+}
 
 @media screen and (max-width : 968px) {
   .root {
-    @apply flex flex-col w-4/5 mt-12 px-6;
+    @apply flex flex-col mt-12 px-6;
+  }
+  .large {
+    width: 80%;
+  }
+  .medium {
+    width: 400px;
+    height: 300px;
+  }
+  .small {
+    width: 140px;
+    height: 140px
   }
   .root > div {
-    @apply flex flex-col h-5/6 text-sm justify-around text-left;
+    @apply flex flex-col h-5/6 text-sm justify-around;
   }
   .root > div > span {
     @apply flex ;
   }
   .root > div > div {
-    @apply flex flex-col text-left items-center ;
+    @apply flex flex-col text-left items-center;
   }
   .root > div > span:hover {
     @apply text-blue-300 ;
@@ -57,5 +102,17 @@
   }
   .root > div > div > span:hover {
     @apply text-blue-300;
+  }
+  .large .title {
+    @apply text-2xl mb-6;
+  }
+  .medium .title {
+    @apply text-xl mb-4;
+  }
+  .small .title {
+    @apply text-sm mb-2;
+  }
+  .small > div {
+    @apply text-center text-sm;
   }
 }
