@@ -1,25 +1,37 @@
 .root {
-  @apply h-20 px-40 fixed text-white flex items-center justify-between;
+  @apply h-20 px-40 fixed font-bold text-black flex items-center justify-between;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255,255,255,0.1);
   width: 100%;
+  z-index: 9999;
 }
 .menu {
   @apply flex ;
 }
-
-.menu > span {
+.menu > a {
   @apply px-12;
 }
 .language {
   @apply flex ;
 }
-.language > span {
+.language > a {
   @apply px-2;
 }
-.language > span:last-child {
+.language > a:last-child {
   @apply hidden;
+}
+.customButton:hover {
+  background-color: rgb(201, 199, 199);
+  opacity: 0.6;
+  border-radius: 16px;
+}
+
+.customButton:active {
+  background-color: rgb(226, 202, 202);
+  opacity: 0.6;
+  border-radius: 16px;
 }
 
 @media screen and (max-width : 968px) {
@@ -29,7 +41,7 @@
   .menu {
     display: none;
   }
-  .language > span:last-child {
+  .language > a:last-child {
     @apply block;
   }
 }
