@@ -8,6 +8,8 @@ import { GlassmorphismBox } from '@components/ui';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { setBgColor } from '@lib/redux/slices/globalSlice';
+import { MY_INFO } from 'utils/constants';
+import RecentBoard from '@components/RecentBoard';
 
 const Home: NextPage = () => {
   const [imageNumber, setImageNumber] = React.useState(1);
@@ -49,46 +51,22 @@ const Home: NextPage = () => {
           }}>
           <div
             className={cn('flex justify-center space-x-4 flex-wrap max-w-6xl')}>
-            <GlassmorphismBox className="ml-4" title="이름" size="s">
-              <div>유하영</div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="MBTI" size="s">
-              <div>ESTP</div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="키" size="s">
-              <div>178.6 cm</div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="몸무게" size="s">
-              <div>69 kg</div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="취미" size="s">
-              <div>
-                커피마시러
-                <br />
-                카페가기
-              </div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="관심분야?" size="s">
-              <div>
-                최근들어 UI 인터랙션!?! <br />
-                백오피스 개발?
-              </div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="관심기술?" size="s">
-              <div>SWR / CSS / responsive web / typescript generic</div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="2022 목표" size="s">
-              <div>
-                운동 다시 시작하기.. <br /> 수학 강의 영상 찍기!! <br /> 코테
-                공부(js)
-              </div>
-            </GlassmorphismBox>
-            <GlassmorphismBox title="경력" size="s">
-              <div>1년도 안된.. 주니어</div>
-            </GlassmorphismBox>
+            {MY_INFO.map((info, idx) => {
+              return (
+                <GlassmorphismBox
+                  key={info.title}
+                  className={idx === 0 && 'ml-4'}
+                  title={info.title}
+                  size="s">
+                  <div dangerouslySetInnerHTML={{ __html: info.content }} />
+                </GlassmorphismBox>
+              );
+            })}
           </div>
         </div>
-        <div className={cn('')}>HAYOUNG profile4</div>
+        <div className={cn('')}>
+          <RecentBoard />
+        </div>
         <Footer />
       </WheelLayout>
     </>
