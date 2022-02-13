@@ -5,7 +5,7 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.1)
+  border: 1px solid rgba(255,255,255,0.1);
 }
 .root > div {
   @apply flex flex-col h-5/6 text-base justify-around;
@@ -68,16 +68,19 @@
 
 @media screen and (max-width : 968px) {
   .root {
-    @apply flex flex-col mt-12 px-6;
+    @apply flex flex-col mt-6 px-6;
   }
   .large {
+    @apply p-6;
     width: 80%;
   }
   .medium {
+    @apply py-6 px-8;
     width: 400px;
     height: 300px;
   }
   .small {
+    @apply p-2;
     width: 140px;
     height: 140px
   }
