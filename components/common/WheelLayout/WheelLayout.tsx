@@ -57,7 +57,6 @@ const WheelLayout = (props: LayoutProps) => {
           }
         }
       }
-      console.log(currentPage - 1, ':', colors[currentPage - 1]);
       dispatch(setBgColor(colors[currentPage - 1]));
     };
 

@@ -5,11 +5,11 @@ import { Footer, WheelLayout } from '@components/common';
 
 import cn from 'classnames';
 import { GlassmorphismBox } from '@components/ui';
-import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { setBgColor } from '@lib/redux/slices/globalSlice';
 import { MY_INFO } from 'utils/constants';
 import RecentBoard from '@components/RecentBoard';
+import CustomButton from '@components/ui/CustomButton/CustomButton';
 
 const Home: NextPage = () => {
   const [imageNumber, setImageNumber] = React.useState(1);

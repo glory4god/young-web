@@ -52,6 +52,7 @@
 }
 .title {
   @apply text-center;
+  color: var(--main-green-color);
 }
 .large .title {
   @apply text-xl mb-6;

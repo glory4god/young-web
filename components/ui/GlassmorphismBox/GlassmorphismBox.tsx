@@ -13,6 +13,7 @@ interface GlassmorphismBoxProps {
 
 const GlassmorphismBox = (props: GlassmorphismBoxProps) => {
   const { className, children, title, size = 'l' } = props;
+  console.log(children);
   return (
     <div
       className={cn(
@@ -27,7 +28,7 @@ const GlassmorphismBox = (props: GlassmorphismBoxProps) => {
           <b>{title}</b>
         </h2>
       )}
-      <div>{children}</div>
+      {children}
     </div>
   );
 };

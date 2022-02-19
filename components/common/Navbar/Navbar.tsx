@@ -19,13 +19,11 @@ const Navbar = () => {
   // const innerHeight = window.innerHeight;
   // FIXME: window scroll은 안되는듯..? ref 이용할 방법 고민
   const moveScrollBy = (height: number) => {
-    console.log(height);
     window.scrollTo({ top: height, behavior: 'smooth' });
   };
 
   return (
     <div className={cn(s.root)} style={{ color: `${textColor}` }}>
-      {console.log(backgroundColor)}
       <div>
         <Link href={'/'}>
           <a>HAYOUNG YU</a>
