@@ -1,6 +1,11 @@
-:root {
-  --main-green-color : green;
 
+body{ 
+  color : var(--main-black-color);
+}
+
+:root {
+  --main-green-color : #007000;
+  --main-black-color : #191919;
 
 
   --font-header :  56px;
