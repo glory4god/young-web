@@ -64,7 +64,7 @@ const Home: NextPage = () => {
             })}
           </div>
         </div>
-        <div className={cn('')}>
+        <div className={cn(' ')}>
           <RecentBoard />
         </div>
         <Footer />
