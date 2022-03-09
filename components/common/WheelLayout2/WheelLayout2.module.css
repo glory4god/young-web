@@ -1,0 +1,7 @@
+.root {
+  @apply w-full h-full text-black;
+}
+
+.root > div:not(:last-child){
+  @apply w-full h-screen overflow-hidden ;
+}
