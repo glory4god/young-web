@@ -4,6 +4,7 @@
   border: 1px solid transparent;
 
 }
+
 .root:hover {
   border: 1px solid #4b1f90;  
   background-color: rgba(11, 47, 116, 0.3);
@@ -39,6 +40,5 @@
   right: inherit;
   bottom: inherit;
   border-radius: 50%;
-
   background-color: yellow;
 }

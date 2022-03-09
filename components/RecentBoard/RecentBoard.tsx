@@ -26,8 +26,15 @@ const RecentBoard = () => {
 
   return (
     <div className={cn(s.root)}>
-      <h2 className={s.title}>최근에 다녀왔어요!</h2>
-      <div className={s.body}>
+      <div className={s.header}>
+        <div className={s.box}>영억1</div>
+        <div className={s.box}>영역2</div>
+      </div>
+      {/* <div className={cn(s.wrap, 'flex space-x-4')}>
+        <button className={s.title}>메뉴 1</button>
+        <button className={s.title}>메뉴 2</button>
+      </div> */}
+      {/* <div className={s.body}>
         {boards.map((board) => {
           return (
             <div
@@ -43,7 +50,7 @@ const RecentBoard = () => {
               }}></div>
           );
         })}
-      </div>
+      </div> */}
       {isModalShow && (
         <div
           ref={modalRef}

@@ -1,11 +1,74 @@
 .root {
-  @apply flex flex-col max-w-7xl w-full items-center;
+  @apply flex flex-col max-w-7xl w-full;
 }
 
-.root .title { 
-  @apply flex h-20 text-xl items-center ;
+.wrap {
+  position: relative;
 }
 
+.wrap::after {
+  content: '';
+  position: absolute;
+  top: inherit;
+  right: inherit;
+  bottom: -8px;
+  left: 50%;
+  width: 0%;
+  height: 4px;
+  transform: translateX(-50%);
+  background-color: #c9c9c9;
+  transition: all 1s ease-out;
+}
+.wrap:hover::after{
+  width: 100%
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+.box {
+  width: 4rem;
+  height: 4rem;
+  background-color: green
+}
+.title { 
+  
+  @apply flex px-8 py-3 text-xl items-center;
+  position: relative;
+  border: 1px solid #adadad;
+  border-radius:21px;
+  box-shadow: 0px 3px 6px #adadad;
+}
+
+.title:hover { 
+/* background-color: rgba(173,173,173, 0.5); */
+border: none;
+}
+.title:active { 
+  box-shadow: inset 0px 3px 6px #adadad;
+  background-color: white;
+}
+/* .title::after { 
+  content :'';
+  position: absolute;
+  top: inherit;
+  right: inherit;
+  bottom: -12px;
+  left: 0px;
+  width: 0%;
+  height: 4px;
+  background-color: red;
+  transition: all 1s ease-out;
+  
+}
+
+.title:hover::after { 
+  width: 100%;
+} */
 .root .body { 
   @apply grid grid-cols-4 gap-4 mt-8;
   width: 100%;
