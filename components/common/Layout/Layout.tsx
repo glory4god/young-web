@@ -7,7 +7,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <header>
         <Navbar />
       </header>
-      <main className="mx-auto w-screen">{children}</main>
+      <main className="mx-auto w-full h-full">{children}</main>
     </>
   );
 }
