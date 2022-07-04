@@ -6,8 +6,8 @@
 }
 
 .root:hover {
-  border: 1px solid #4b1f90;  
-  background-color: rgba(11, 47, 116, 0.3);
+  border: 1px solid #0080ca;  
+  background-color: rgba(0, 112, 218, 0.781);
   color: white;
   border-radius: 21px;
     
@@ -40,5 +40,5 @@
   right: inherit;
   bottom: inherit;
   border-radius: 50%;
-  background-color: yellow;
+  background-color: rgb(25, 0, 255);
 }

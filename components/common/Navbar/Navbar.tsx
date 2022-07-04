@@ -28,7 +28,6 @@ const Navbar = () => {
 
   return (
     <div className={cn(s.root)} style={{ color: `${textColor}` }}>
-      {console.log(pathname)}
       <div>
         <Link href={'/'}>
           <a>HAYOUNG YU</a>
@@ -43,6 +42,9 @@ const Navbar = () => {
         </Link>
         <Link href={'/tech'} selected={pathname.includes('tech')}>
           Tech
+        </Link>
+        <Link href={'/practice'} selected={pathname.includes('practice')}>
+          Practice
         </Link>
       </div>
       <div className={s.language}>

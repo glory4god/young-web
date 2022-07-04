@@ -5,3 +5,39 @@
 @import './components.css';
 
 @tailwind utilities;
+
+
+.c-container {
+  position: relative;
+  margin: auto;
+}
+.slider {
+  position: relative;
+  display: flex;
+  width: calc(5 * 100vw);
+  height: 400px;
+  transition: all 0.4s ease-out;
+}
+.slider > .slider-contant {
+  width: 100%;
+  height: 100%;
+}
+.navigator {
+  @apply space-x-4;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 5%);
+}
+.navigator > button {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #dbdbdb;
+  border-radius: 50%;
+  bottom: 5%;
+  left: 50%;
+}
+.navigator > button.btn-active {
+  background-color: #dbdbdb;
+  box-shadow: 0px 3px 6px #777777 inset;
+}
