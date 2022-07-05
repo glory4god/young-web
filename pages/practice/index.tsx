@@ -1,12 +1,10 @@
-import Link from 'next/link';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 
-import { GlassmorphismBox } from '@components/ui';
 import { useDispatch } from 'react-redux';
 import { setBgColor } from '@lib/redux/slices/globalSlice';
 import { NormalSlider } from '@components/slider';
 
-const TechPage = () => {
+const PracticePage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,4 +17,4 @@ const TechPage = () => {
   );
 };
 
-export default TechPage;
+export default PracticePage;
